@@ -5,7 +5,7 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
+    --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 240 70% 65%;
+    --primary: 352 70% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -23,15 +23,15 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 229 84% 98%;
-    --accent-foreground: 240 70% 60%;
+    --accent: 220 80% 98%; 
+    --accent-foreground: 352 70% 50%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 240 70% 65%;
+    --ring: 352 70% 50%;
 
     --radius: 0.6rem;
 
@@ -55,6 +55,7 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     scroll-behavior: smooth;
+    font-family: 'Mukta', 'Inter', sans-serif;
   }
 
   .glass-card {
@@ -63,6 +64,24 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Nepali-themed gradient backgrounds */
+  .bg-nepali-gradient-1 {
+    @apply bg-gradient-to-r from-red-600 to-red-500;
+  }
+  
+  .bg-nepali-gradient-2 {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500;
+  }
+  
+  /* Policybazar-inspired card styles */
+  .policy-card {
+    @apply bg-white rounded-xl shadow-md border border-slate-100 p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/20;
+  }
+  
+  .feature-icon-container {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-white mb-4;
   }
 }
 

@@ -63,18 +63,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				nebula: {
-					50: '#f5f7ff',
-					100: '#ecf0ff',
-					200: '#d9e2ff',
-					300: '#b8c9ff',
-					400: '#92a7ff',
-					500: '#6e7ffc',
-					600: '#5a65f5',
-					700: '#4a4ee8',
-					800: '#3f41ca',
-					900: '#373aa1',
-					950: '#1e1f55',
+				// Nepali-themed colors
+				nepali: {
+					red: '#C8102E', // From Nepal flag
+					blue: '#003893', // From Nepal flag
+					50: '#FEF2F4',
+					100: '#FDE6EA',
+					200: '#F9BFCB',
+					300: '#F597AC',
+					400: '#F06E8D',
+					500: '#EB456E',
+					600: '#D92752',
+					700: '#B31D41',
+					800: '#8E1733',
+					900: '#691124',
 				},
 				slate: {
 					50: '#f8fafc',
@@ -89,6 +91,9 @@ export default {
 					900: '#0f172a',
 					950: '#020617',
 				},
+			},
+			fontFamily: {
+				'mukta': ['Mukta', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -161,7 +166,6 @@ export default {
 			boxShadow: {
 				'soft': '0 2px 15px rgba(0, 0, 0, 0.05)',
 				'medium': '0 4px 20px rgba(0, 0, 0, 0.08)',
-				'nebula': '0 5px 15px rgba(110, 127, 252, 0.15)',
 				'glass': '0 8px 32px rgba(0, 0, 0, 0.06)'
 			}
 		}

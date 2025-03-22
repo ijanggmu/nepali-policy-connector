@@ -14,8 +14,9 @@ const CallToAction = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-nebula-600 to-nebula-800 text-white overflow-hidden relative">
-      {/* Decorative element */}
+    <section className="py-16 md:py-24 bg-gradient-to-r from-primary/90 to-primary text-white overflow-hidden relative">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 right-0 h-16 bg-[url('https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg')] bg-repeat-x opacity-10"></div>
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-white/5 rounded-bl-[100px] -z-0"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-white/5 rounded-tr-[100px] -z-0"></div>
       
@@ -28,7 +29,8 @@ const CallToAction = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight relative">
+                <span className="absolute -left-8 top-0 text-6xl text-white/20">॥</span>
                 Ready to Secure Your Future with Confidence?
               </h2>
               <p className="text-white/90 text-lg mb-8 max-w-xl">
@@ -56,7 +58,7 @@ const CallToAction = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-white text-nebula-800 hover:bg-white/90 transition-colors rounded-full px-8 border-none"
+                  className="bg-white text-primary hover:bg-white/90 transition-colors rounded-full px-8 border-none"
                 >
                   Get Started
                 </Button>
@@ -130,7 +132,7 @@ const CallToAction = () => {
                   />
                 </div>
                 
-                <Button className="w-full bg-white text-nebula-800 hover:bg-white/90 transition-colors mt-2">
+                <Button className="w-full bg-white text-primary hover:bg-white/90 transition-colors mt-2">
                   Get Quote
                 </Button>
                 
