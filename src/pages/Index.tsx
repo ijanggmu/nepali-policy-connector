@@ -9,9 +9,6 @@ import Partners from '@/components/home/Partners';
 import Testimonials from '@/components/home/Testimonials';
 import CallToAction from '@/components/home/CallToAction';
 
-// We'll need to add framer-motion for our animations
-<lov-add-dependency>framer-motion@latest</lov-add-dependency>
-
 const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
