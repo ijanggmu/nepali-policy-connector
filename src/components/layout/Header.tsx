@@ -18,7 +18,10 @@ import {
   LifeBuoy,
   HelpCircle,
   Clock,
-  FileText
+  FileText,
+  CreditCard,
+  Building,
+  Briefcase
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -68,11 +71,7 @@ const Header = () => {
   };
 
   const handleQuickCalculate = () => {
-    toast({
-      title: "Calculator",
-      description: "Opening premium calculator...",
-    });
-    // Navigate to calculator in a real implementation
+    window.location.href = '/premium-calculator';
   };
 
   const handleLanguageChange = () => {
@@ -91,7 +90,7 @@ const Header = () => {
     <motion.header 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 w-full py-2 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        isScrolled ? "bg-white shadow-md" : "bg-white"
       )}
       initial="initial"
       animate="animate"
@@ -131,7 +130,7 @@ const Header = () => {
           </div>
         </div>
         
-        {/* Main navigation */}
+        {/* Main navigation - Policybazar style */}
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
@@ -143,16 +142,16 @@ const Header = () => {
           
           <div className="hidden lg:flex">
             <NavigationMenu>
-              <NavigationMenuList>
+              <NavigationMenuList className="gap-1">
                 <NavigationMenuItem>
-                  <Link to="/" className={navigationMenuTriggerStyle}>Home</Link>
+                  <Link to="/" className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">Home</Link>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Insurance Products</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-slate-800 bg-transparent hover:bg-accent">Insurance</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[500px] p-4">
-                      <div className="grid grid-cols-2 gap-4">
+                    <div className="w-[600px] p-4">
+                      <div className="grid grid-cols-3 gap-4">
                         <div>
                           <h4 className="text-sm font-medium text-primary mb-2">Personal Insurance</h4>
                           <div className="space-y-2">
@@ -171,46 +170,63 @@ const Header = () => {
                               <span>Life Insurance</span>
                             </Link>
                             <Link 
-                              to="/insurance/vehicle" 
+                              to="/insurance/term" 
                               className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"
                             >
-                              <Car className="w-4 h-4 text-green-500" />
-                              <span>Vehicle Insurance</span>
+                              <CreditCard className="w-4 h-4 text-green-500" />
+                              <span>Term Life</span>
+                            </Link>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-medium text-primary mb-2">Vehicle Insurance</h4>
+                          <div className="space-y-2">
+                            <Link 
+                              to="/insurance/car" 
+                              className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"
+                            >
+                              <Car className="w-4 h-4 text-purple-500" />
+                              <span>Car Insurance</span>
+                            </Link>
+                            <Link 
+                              to="/insurance/bike" 
+                              className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"
+                            >
+                              <Car className="w-4 h-4 text-orange-500" />
+                              <span>Two-Wheeler Insurance</span>
                             </Link>
                             <Link 
                               to="/insurance/travel" 
                               className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"
                             >
-                              <Globe className="w-4 h-4 text-purple-500" />
+                              <Globe className="w-4 h-4 text-blue-500" />
                               <span>Travel Insurance</span>
                             </Link>
                           </div>
                         </div>
                         <div>
-                          <h4 className="text-sm font-medium text-primary mb-2">Property & Business</h4>
+                          <h4 className="text-sm font-medium text-primary mb-2">Other Insurance</h4>
                           <div className="space-y-2">
                             <Link 
                               to="/insurance/property" 
                               className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"
                             >
-                              <HomeIcon className="w-4 h-4 text-orange-500" />
+                              <HomeIcon className="w-4 h-4 text-indigo-500" />
                               <span>Property Insurance</span>
                             </Link>
                             <Link 
                               to="/insurance/business" 
                               className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"
                             >
-                              <FileText className="w-4 h-4 text-indigo-500" />
+                              <Building className="w-4 h-4 text-teal-500" />
                               <span>Business Insurance</span>
                             </Link>
-                          </div>
-                          <div className="mt-4 p-3 bg-slate-50 rounded-md">
-                            <div className="text-xs font-medium text-slate-500 mb-1">Need help choosing?</div>
                             <Link 
-                              to="/insurance-advisor" 
-                              className="text-sm text-primary hover:underline"
+                              to="/insurance/investment" 
+                              className="flex items-center gap-2 p-2 rounded-md hover:bg-slate-50 text-sm text-slate-700"
                             >
-                              Speak to an insurance advisor
+                              <Briefcase className="w-4 h-4 text-yellow-500" />
+                              <span>Investment Plans</span>
                             </Link>
                           </div>
                         </div>
@@ -220,7 +236,14 @@ const Header = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Compare</NavigationMenuTrigger>
+                  <Link to="/premium-calculator" className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-800 transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">
+                    <Calculator className="w-4 h-4 mr-2" />
+                    <span>Premium Calculator</span>
+                  </Link>
+                </NavigationMenuItem>
+                
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-slate-800 bg-transparent hover:bg-accent">Compare</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[400px] p-4 space-y-2">
                       <Link 
@@ -255,11 +278,11 @@ const Header = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <Link to="/claims" className={navigationMenuTriggerStyle}>Claims</Link>
+                  <Link to="/claims" className="inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium text-slate-800 transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none">Claims</Link>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-slate-800 bg-transparent hover:bg-accent">Resources</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[240px] p-4 space-y-2">
                       <Link 
@@ -294,15 +317,6 @@ const Header = () => {
           </div>
           
           <div className="hidden md:flex items-center gap-3">
-            <Button 
-              variant="outline" 
-              className="rounded-full focus-ring flex items-center gap-2"
-              onClick={handleQuickCalculate}
-            >
-              <Calculator className="w-4 h-4" />
-              <span>Premium Calculator</span>
-            </Button>
-            
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="rounded-full">

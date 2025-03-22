@@ -14,9 +14,8 @@ const CallToAction = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-primary/90 to-primary text-white overflow-hidden relative">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 right-0 h-16 bg-[url('https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg')] bg-repeat-x opacity-10"></div>
+    <section className="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-blue-500 text-white overflow-hidden relative">
+      {/* Decorative elements - more subtle */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-white/5 rounded-bl-[100px] -z-0"></div>
       <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-white/5 rounded-tr-[100px] -z-0"></div>
       
@@ -29,12 +28,11 @@ const CallToAction = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight relative">
-                <span className="absolute -left-8 top-0 text-6xl text-white/20">॥</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
                 Ready to Secure Your Future with Confidence?
               </h2>
               <p className="text-white/90 text-lg mb-8 max-w-xl">
-                Join thousands of satisfied customers who've found the perfect insurance coverage through NepInsure. Our platform makes it easy to compare, choose, and manage your policies.
+                Join thousands of satisfied customers who've found the perfect insurance coverage through NepInsure.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-10">
@@ -50,7 +48,7 @@ const CallToAction = () => {
                     <div className="rounded-full bg-white/20 p-1 mr-3">
                       <Check className="w-4 h-4" />
                     </div>
-                    <span>{feature}</span>
+                    <span className="text-sm">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -58,14 +56,14 @@ const CallToAction = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-white text-primary hover:bg-white/90 transition-colors rounded-full px-8 border-none"
+                  className="bg-white text-primary hover:bg-white/90 transition-colors rounded-md px-8 border-none"
                 >
                   Get Started
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="bg-transparent border-white/30 hover:bg-white/10 text-white transition-colors rounded-full px-8 group"
+                  className="bg-transparent border-white/30 hover:bg-white/10 text-white transition-colors rounded-md px-8 group"
                 >
                   <span>Learn More</span>
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -81,7 +79,7 @@ const CallToAction = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 md:p-8">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-6 md:p-8">
               <h3 className="text-xl font-semibold mb-6">Get a Quick Quote</h3>
               
               <div className="space-y-4">
@@ -89,7 +87,7 @@ const CallToAction = () => {
                   <label className="block text-sm font-medium mb-1 text-white/90">
                     Insurance Type
                   </label>
-                  <select className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
+                  <select className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all">
                     <option value="" disabled selected>Select insurance type</option>
                     <option value="health">Health Insurance</option>
                     <option value="life">Life Insurance</option>
@@ -105,7 +103,7 @@ const CallToAction = () => {
                   </label>
                   <input 
                     type="text" 
-                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all placeholder-white/50"
+                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all placeholder-white/50"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -116,7 +114,7 @@ const CallToAction = () => {
                   </label>
                   <input 
                     type="tel" 
-                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all placeholder-white/50"
+                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all placeholder-white/50"
                     placeholder="Enter your phone number"
                   />
                 </div>
@@ -127,7 +125,7 @@ const CallToAction = () => {
                   </label>
                   <input 
                     type="email" 
-                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all placeholder-white/50"
+                    className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-white/30 transition-all placeholder-white/50"
                     placeholder="Enter your email"
                   />
                 </div>

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +13,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 352 70% 50%;
+    --primary: 220 80% 45%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -23,15 +22,15 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 220 80% 98%; 
-    --accent-foreground: 352 70% 50%;
+    --accent: 220 85% 96%;
+    --accent-foreground: 220 80% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 352 70% 50%;
+    --ring: 220 80% 45%;
 
     --radius: 0.6rem;
 
@@ -44,10 +43,9 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
 
-    /* Nepali theme colors */
-    --nepali-red: 352 70% 50%;
+    --nepali-red: 220 80% 45%;
     --nepali-blue: 214 80% 30%;
-    --nepali-accent: 42 100% 60%;
+    --nepali-accent: 42 90% 65%;
   }
   
   * {
@@ -71,16 +69,14 @@
     text-wrap: balance;
   }
   
-  /* Nepali-themed gradient backgrounds */
   .bg-nepali-gradient-1 {
-    @apply bg-gradient-to-r from-red-600 to-red-500;
-  }
-  
-  .bg-nepali-gradient-2 {
     @apply bg-gradient-to-r from-blue-600 to-blue-500;
   }
   
-  /* Policybazar-inspired card styles */
+  .bg-nepali-gradient-2 {
+    @apply bg-gradient-to-r from-blue-700 to-blue-600;
+  }
+  
   .policy-card {
     @apply bg-white rounded-xl shadow-md border border-slate-100 p-6 transition-all duration-300 hover:shadow-lg hover:border-primary/20;
   }
@@ -89,7 +85,6 @@
     @apply w-12 h-12 rounded-full flex items-center justify-center text-white mb-4;
   }
 
-  /* Enhanced card styles */
   .premium-card {
     @apply bg-gradient-to-br from-white to-slate-50 rounded-xl border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 p-6;
   }
@@ -98,7 +93,6 @@
     @apply bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl border border-primary/20 shadow-md hover:shadow-xl transition-all duration-300 p-6;
   }
   
-  /* Badge styles */
   .badge {
     @apply inline-flex items-center text-xs font-medium rounded-full px-2.5 py-0.5;
   }
@@ -115,12 +109,10 @@
     @apply bg-green-100 text-green-700;
   }
   
-  /* Button animations */
   .btn-scale {
     @apply transform transition duration-200 hover:scale-105 active:scale-95;
   }
   
-  /* Decorative elements */
   .decorative-dots {
     background-image: radial-gradient(var(--slate-300) 1px, transparent 1px);
     background-size: 20px 20px;
@@ -144,7 +136,6 @@
     @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
   
-  /* New utilities */
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -159,7 +150,6 @@
   }
 }
 
-/* Reusable CSS component for mask gradients */
 .mask-linear-gradient-b {
   mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
@@ -170,7 +160,6 @@
   -webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
 }
 
-/* Enhanced glowing effect */
 .glow-primary {
   box-shadow: 0 0 15px rgba(220, 38, 38, 0.15), 0 0 5px rgba(220, 38, 38, 0.1);
 }
@@ -179,7 +168,6 @@
   box-shadow: 0 0 15px rgba(37, 99, 235, 0.15), 0 0 5px rgba(37, 99, 235, 0.1);
 }
 
-/* Custom scroll bar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -197,9 +185,8 @@
   background: hsl(var(--muted-foreground) / 0.5);
 }
 
-/* Nepali flag colors gradient */
 .nepali-flag-gradient {
-  background: linear-gradient(135deg, hsl(var(--nepali-red)) 0%, hsl(var(--nepali-blue)) 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
 }
 
 .nepal-pattern {
@@ -213,7 +200,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003893' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003893' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   opacity: 0.3;
   z-index: -1;
 }

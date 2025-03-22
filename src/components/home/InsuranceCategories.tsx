@@ -12,28 +12,28 @@ const categories = [
     title: 'Health Insurance',
     description: 'Medical coverage for individuals & families',
     path: '/insurance/health',
-    color: 'bg-red-50 text-red-500 border-red-100',
+    color: 'bg-blue-50 text-blue-500 border-blue-100',
   },
   {
     icon: Users,
     title: 'Life Insurance',
     description: 'Financial protection for your loved ones',
     path: '/insurance/life',
-    color: 'bg-blue-50 text-blue-500 border-blue-100',
+    color: 'bg-indigo-50 text-indigo-500 border-indigo-100',
   },
   {
     icon: Car,
     title: 'Vehicle Insurance',
     description: 'Coverage for cars, bikes & commercial vehicles',
     path: '/insurance/vehicle',
-    color: 'bg-green-50 text-green-500 border-green-100',
+    color: 'bg-teal-50 text-teal-500 border-teal-100',
   },
   {
     icon: Home,
     title: 'Property Insurance',
     description: 'Protection for homes & commercial properties',
     path: '/insurance/property',
-    color: 'bg-orange-50 text-orange-500 border-orange-100',
+    color: 'bg-emerald-50 text-emerald-500 border-emerald-100',
   },
   {
     icon: Map,
@@ -47,21 +47,21 @@ const categories = [
     title: 'Investment Plans',
     description: 'Grow your wealth with insurance-backed investments',
     path: '/insurance/investment',
-    color: 'bg-indigo-50 text-indigo-500 border-indigo-100',
+    color: 'bg-amber-50 text-amber-500 border-amber-100',
   },
   {
     icon: Umbrella,
     title: 'Liability Insurance',
     description: 'Protection against third-party claims',
     path: '/insurance/liability',
-    color: 'bg-teal-50 text-teal-500 border-teal-100',
+    color: 'bg-sky-50 text-sky-500 border-sky-100',
   },
   {
     icon: User,
     title: 'Personal Accident',
     description: 'Coverage for unforeseen accidents',
     path: '/insurance/personal-accident',
-    color: 'bg-yellow-50 text-yellow-500 border-yellow-100',
+    color: 'bg-orange-50 text-orange-500 border-orange-100',
   },
 ];
 
@@ -90,10 +90,10 @@ const InsuranceCategories = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-slate-50">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-          <div className="bg-nebula-100 text-nebula-700 rounded-full inline-flex items-center px-3 py-1 text-sm font-medium mb-4">
+          <div className="bg-blue-50 text-blue-600 rounded-full inline-flex items-center px-3 py-1 text-sm font-medium mb-4">
             <ShieldCheck className="w-4 h-4 mr-1" />
             Insurance Categories
           </div>
@@ -116,15 +116,15 @@ const InsuranceCategories = () => {
             <motion.div key={index} variants={item}>
               <Link 
                 to={category.path} 
-                className="block h-full bg-white rounded-2xl p-6 border border-slate-100 shadow-soft hover:shadow-medium transition-all hover:translate-y-[-5px] group"
+                className="block h-full bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow transition-all hover:translate-y-[-2px] group"
               >
-                <div className={`rounded-xl w-12 h-12 flex items-center justify-center mb-4 ${category.color} transition-colors group-hover:bg-opacity-80`}>
-                  <category.icon className="w-6 h-6" />
+                <div className={`rounded-lg w-10 h-10 flex items-center justify-center mb-4 ${category.color} transition-colors group-hover:bg-opacity-90`}>
+                  <category.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-2 group-hover:text-nebula-700 transition-colors">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors">
                   {category.title}
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-slate-600 text-sm">
                   {category.description}
                 </p>
               </Link>
