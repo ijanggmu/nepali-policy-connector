@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { 
   Select, 
@@ -12,7 +13,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { motion } from 'framer-motion';
-import { ArrowRight, Shield } from 'lucide-react';
+import { ArrowRight, Calculator, Shield } from 'lucide-react';
 
 const QuickQuote = () => {
   const [step, setStep] = useState(1);
@@ -53,7 +54,7 @@ const QuickQuote = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 relative">
+    <section className="py-16 md:py-24 relative bg-pattern-light">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -62,7 +63,7 @@ const QuickQuote = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <div className="bg-nebula-100 text-nebula-700 rounded-full inline-flex items-center px-3 py-1 text-sm font-medium mb-4">
+            <div className="bg-primary/10 text-primary rounded-full inline-flex items-center px-3 py-1 text-sm font-medium mb-4">
               <Shield className="w-4 h-4 mr-1" />
               Quick Quote
             </div>
@@ -75,7 +76,7 @@ const QuickQuote = () => {
             
             <div className="space-y-6">
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-nebula-100 text-nebula-700 flex items-center justify-center font-semibold">1</div>
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold">1</div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-slate-900">Select your insurance type</h3>
                   <p className="text-slate-600">Choose from our wide range of insurance products</p>
@@ -83,7 +84,7 @@ const QuickQuote = () => {
               </div>
               
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-nebula-100 text-nebula-700 flex items-center justify-center font-semibold">2</div>
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold">2</div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-slate-900">Enter your details</h3>
                   <p className="text-slate-600">Provide basic information for an accurate quote</p>
@@ -91,11 +92,21 @@ const QuickQuote = () => {
               </div>
               
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-nebula-100 text-nebula-700 flex items-center justify-center font-semibold">3</div>
+                <div className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-semibold">3</div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-slate-900">Compare and choose</h3>
                   <p className="text-slate-600">View quotes from multiple insurers and select the best one</p>
                 </div>
+              </div>
+              
+              <div className="mt-8">
+                <Link to="/premium-calculator">
+                  <Button variant="outline" className="flex items-center gap-2 btn-scale rounded-full">
+                    <Calculator className="w-4 h-4" />
+                    <span>Use Premium Calculator</span>
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -106,7 +117,7 @@ const QuickQuote = () => {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <div className="bg-white rounded-2xl shadow-medium p-6 md:p-8 border border-slate-100">
+            <div className="bg-white rounded-2xl shadow-medium p-6 md:p-8 border border-slate-100 glow-primary">
               <div className="mb-6">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-semibold text-slate-900">Get Your Quote</h3>
@@ -115,7 +126,7 @@ const QuickQuote = () => {
                 
                 <div className="w-full bg-slate-100 h-2 rounded-full mb-8">
                   <div 
-                    className="bg-nebula-600 h-2 rounded-full transition-all duration-500 ease-out"
+                    className="bg-primary h-2 rounded-full transition-all duration-500 ease-out"
                     style={{ width: `${(step / 3) * 100}%` }}
                   ></div>
                 </div>
@@ -303,7 +314,7 @@ const QuickQuote = () => {
                       Click the button below to view personalized quotes from Nepal's top insurers
                     </p>
                     <Button 
-                      className="w-full bg-nebula-600 hover:bg-nebula-700 gap-2 h-12"
+                      className="w-full bg-primary hover:bg-primary/90 gap-2 h-12 btn-scale"
                     >
                       View My Quotes
                       <ArrowRight className="w-4 h-4" />
@@ -331,7 +342,7 @@ const QuickQuote = () => {
                   <Button 
                     onClick={handleNext} 
                     disabled={step === 1 && !insuranceType}
-                    className="bg-nebula-600 hover:bg-nebula-700"
+                    className="bg-primary hover:bg-primary/90 btn-scale"
                   >
                     Continue
                   </Button>
@@ -343,7 +354,7 @@ const QuickQuote = () => {
       </div>
       
       {/* Background decoration */}
-      <div className="absolute bottom-0 right-0 w-1/2 h-64 bg-nebula-50 -z-10 rounded-tl-[100px] opacity-70"></div>
+      <div className="absolute bottom-0 right-0 w-1/2 h-64 bg-primary/5 -z-10 rounded-tl-[100px] opacity-70"></div>
     </section>
   );
 };
