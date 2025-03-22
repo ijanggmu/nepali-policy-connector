@@ -116,10 +116,10 @@ const InsuranceCategories = () => {
             <motion.div key={index} variants={item}>
               <Link 
                 to={category.path} 
-                className="block h-full bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow transition-all hover:translate-y-[-2px] group"
+                className="group block h-full bg-white rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow transition-all hover:translate-y-[-2px]"
               >
-                <div className={`rounded-lg w-10 h-10 flex items-center justify-center mb-4 ${category.color} transition-colors group-hover:bg-opacity-90`}>
-                  <category.icon className="w-5 h-5" />
+                <div className={`rounded-lg w-12 h-12 flex items-center justify-center mb-4 ${category.color} transition-colors group-hover:bg-opacity-90`}>
+                  <category.icon className="w-6 h-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-primary transition-colors">
                   {category.title}

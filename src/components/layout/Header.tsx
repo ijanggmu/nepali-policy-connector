@@ -140,7 +140,8 @@ const Header = () => {
             <span className="tracking-tight">NepInsure</span>
           </Link>
           
-          <div className="hidden lg:flex">
+          {/* Desktop and Tablet Navigation */}
+          <div className="hidden md:flex">
             <NavigationMenu>
               <NavigationMenuList className="gap-1">
                 <NavigationMenuItem>
@@ -316,6 +317,7 @@ const Header = () => {
             </NavigationMenu>
           </div>
           
+          {/* Desktop and tablet account buttons */}
           <div className="hidden md:flex items-center gap-3">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -347,6 +349,7 @@ const Header = () => {
             </Button>
           </div>
           
+          {/* Mobile navigation trigger */}
           <div className="md:hidden flex items-center gap-2">
             <Button 
               variant="ghost" 
@@ -454,6 +457,14 @@ const Header = () => {
                   <Globe className="w-4 h-4 mr-2" />
                   Travel Insurance
                 </Link>
+                <Link 
+                  to="/insurance/investment" 
+                  className="flex items-center text-slate-600 hover:text-primary p-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <Briefcase className="w-4 h-4 mr-2" />
+                  Investment Plans
+                </Link>
               </div>
             </div>
             
@@ -461,19 +472,19 @@ const Header = () => {
               <div className="font-medium text-lg text-slate-900 mb-2">Tools & Resources</div>
               <div className="space-y-2 ml-2">
                 <Link 
-                  to="/compare" 
-                  className="flex items-center text-slate-600 hover:text-primary p-2"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Compare Insurance
-                </Link>
-                <Link 
                   to="/premium-calculator" 
                   className="flex items-center text-slate-600 hover:text-primary p-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Calculator className="w-4 h-4 mr-2" />
                   Premium Calculator
+                </Link>
+                <Link 
+                  to="/compare" 
+                  className="flex items-center text-slate-600 hover:text-primary p-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Compare Insurance
                 </Link>
                 <Link 
                   to="/claims" 
